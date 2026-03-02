@@ -8,8 +8,8 @@
     <div class="col-md-4">
         <div class="card shadow-sm">
             <div class="card-body">
-                <h5>Minuman</h5>
-                <p>Produk minuman segar dan kemasan</p>
+                <h5>Sunscreen</h5>
+                <p>Produk perlindungan kulit dari sinar UV</p>
             </div>
         </div>
     </div>
@@ -17,8 +17,8 @@
     <div class="col-md-4">
         <div class="card shadow-sm">
             <div class="card-body">
-                <h5>Makanan Ringan</h5>
-                <p>Snack dan cemilan</p>
+                <h5>Lotion</h5>
+                <p>Produk perawatan kulit untuk kebutuhan harian</p>
             </div>
         </div>
     </div>
