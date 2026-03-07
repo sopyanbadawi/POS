@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -24,12 +23,13 @@ class BarangSeed extends Seeder
             ['barang_id' => 8, 'kategori_id' => 3, 'barang_kode' => 'BRG008', 'barang_nama' => 'Jaket Kekalahan', 'harga_beli' => 200000, 'harga_jual' => 300000],
             ['barang_id' => 9, 'kategori_id' => 4, 'barang_kode' => 'BRG009', 'barang_nama' => 'Sepatu Basket Adidas', 'harga_beli' => 4000000, 'harga_jual' => 4300000],
             ['barang_id' => 10, 'kategori_id' => 5, 'barang_kode' => 'BRG010', 'barang_nama' => 'Buku Laut Bercerita', 'harga_beli' => 100000, 'harga_jual' => 120000],
-            ['barang_id' => 11, 'kategori_id' => 1, 'barang_kode' => 'BRG011', ' barang_nama' => 'RAM 16 GB', ' harga_beli' => 1000000, ' harga_jual' => 1500000],
-            ['barang_id' => 12, 'kategori_id' => 2, 'barang_kode' => 'BRG012', ' barang_nama' => 'Chitato 60gr', ' harga_beli' => 16000, ' harga_jual' => 19000],
-            ['barang_id' => 13, 'kategori_id' => 3, 'barang_kode' => 'BRG013', ' barang_nama' => 'Keyboard KOORUI', ' harga_beli' => 900000, ' harga_jual' => 9500000],
-            ['barang_id' => 14, 'kategori_id' => 4, 'barang_kode' => 'BRG014', ' barang_nama' => 'Sepatu Adidas Samba', ' harga_beli' => 1000000, ' harga_jual' => 1200000],
-            ['barang_id' => 15, 'kategori_id' => 5, 'barang_kode' => 'BRG015', ' barang_nama' => 'Buku 3276 mdpl', ' harga_beli' => 90000, ' harga_jual' => 100000],
+            ['barang_id' => 11, 'kategori_id' => 1, 'barang_kode' => 'BRG011', 'barang_nama' => 'RAM 16 GB', 'harga_beli' => 1000000, 'harga_jual' => 1500000],
+            ['barang_id' => 12, 'kategori_id' => 2, 'barang_kode' => 'BRG012', 'barang_nama' => 'Chitato 60gr', 'harga_beli' => 16000, 'harga_jual' => 19000],
+            ['barang_id' => 13, 'kategori_id' => 3, 'barang_kode' => 'BRG013', 'barang_nama' => 'Keyboard KOORUI', 'harga_beli' => 900000, 'harga_jual' => 9500000],
+            ['barang_id' => 14, 'kategori_id' => 4, 'barang_kode' => 'BRG014', 'barang_nama' => 'Sepatu Adidas Samba', 'harga_beli' => 1000000, 'harga_jual' => 1200000],
+            ['barang_id' => 15, 'kategori_id' => 5, 'barang_kode' => 'BRG015', 'barang_nama' => 'Buku 3276 mdpl', 'harga_beli' => 90000, 'harga_jual' => 100000],
         ];
+
         DB::table('m_barang')->insert($data);
     }
 }
