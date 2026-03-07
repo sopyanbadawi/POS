@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id('kategori_id');
             $table->string('kategori_kode', 10)->unique();
             $table->string('kategori_nama', 100);
+            //add timestamps
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 
