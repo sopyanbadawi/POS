@@ -28,7 +28,8 @@ class UserController extends Controller
         // UserModel::create($data);
 
         // coba akses model UserModel
-        $users = UserModel::where('username', 'manager9')->firstOrFail();
+        $users = UserModel::where('level_id', 2)->count();
+        //dd($users); //2.3 bagian 1
         return view('user.index', ['users' => $users]);
     }
 }
