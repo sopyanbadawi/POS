@@ -28,9 +28,7 @@ class UserController extends Controller
         // UserModel::create($data);
 
         // coba akses model UserModel
-        $users = UserModel::findOr( 20, ['username', 'nama'], function (){
-            abort(404);
-        });
+        $users = UserModel::where('username', 'manager9')->firstOrFail();
         return view('user.index', ['users' => $users]);
     }
 }
