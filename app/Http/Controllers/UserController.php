@@ -19,26 +19,45 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = UserModel::firstOrNew(
-[
-                'username' => 'manager11',
-                'nama' => 'Manager 11',
-                'password' => Hash::make('12345'),
-                'level_id' => 2,
-            ],
-        );
+        $users = UserModel::all();
+        return view('user.index', ['users' => $users]);
+    }
 
-        $users->username = 'manager12';
+    public function tambah()
+    {
+        return view('user.tambah');
+    }
+
+    public function tambah_simpan(Request $request)
+    {
+        UserModel::create([
+            'username' => $request->username,
+            'nama' => $request->nama,
+            'password' => Hash::make('$request->password'),
+            'level_id' => $request->level_id
+        ]);
+        return redirect('/user');
+    }
+
+    public function ubah($id) {
+        $users = UserModel::find($id);
+        return view('user.ubah', ['users' => $users]);
+    }
+
+    public function ubah_simpan($id, Request $request) {
+        $users = UserModel::find($id);
         
+        $users->username = $request->username;
+        $users->nama = $request->nama;
+        $users->password = Hash::make('$request->password');
+        $users->level_id = $request->level_id;
         $users->save();
-        
-        $users->wasChanged(); //true
-        $users->wasChanged('username'); //true
-        $users->wasChanged(['username', 'level_id']); //true
-        $users->wasChanged('nama'); //false
-    
-        dd($users->wasChanged(['nama', 'username'])); //true
-    
-        // return view('user.index', ['users' => $users]);
+        return redirect('/user');
+    }
+
+    public function hapus($id) {
+        $users = UserModel::find($id);
+        $users->delete();
+        return redirect('/user');
     }
 }
