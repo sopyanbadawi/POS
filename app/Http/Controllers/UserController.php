@@ -19,7 +19,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = UserModel::all();
+        // $users = UserModel::all();
+        $users = UserModel::with('level')->get();
         return view('user.index', ['users' => $users]);
     }
 
