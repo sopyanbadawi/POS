@@ -21,13 +21,24 @@ class UserController extends Controller
     {
         $users = UserModel::firstOrNew(
 [
-                'username' => 'manager33',
-                'nama' => 'Manager Tiga Tiga',
+                'username' => 'manager11',
+                'nama' => 'Manager 11',
                 'password' => Hash::make('12345'),
-                'level_id' => 2
+                'level_id' => 2,
             ],
         );
+
+        $users->username = 'manager12';
+        
         $users->save();
-        return view('user.index', ['users' => $users]);
+        
+        $users->wasChanged(); //true
+        $users->wasChanged('username'); //true
+        $users->wasChanged(['username', 'level_id']); //true
+        $users->wasChanged('nama'); //false
+    
+        dd($users->wasChanged(['nama', 'username'])); //true
+    
+        // return view('user.index', ['users' => $users]);
     }
 }
